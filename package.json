@@ -1,0 +1,19 @@
+{
+  "name": "apitest",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "execa": "^9.3.0",
+    "express": "^4.16.1",
+    "ncp": "^2.0.0",
+    "nodemon": "^3.1.4",
+    "simple-git": "^3.25.0"
+  }
+}

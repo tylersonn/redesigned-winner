@@ -1,0 +1,30 @@
+variables:
+  Name: "Tyler"
+  Message: "Is The Champ"
+
+stages:
+  - build_stage
+  - deploy_stage
+
+build:
+  stage: build_stage
+  image: node
+  script:
+    # - apt update -y
+    # - apt install npm -y
+    - npm install
+  artifacts:
+    paths:
+      - node_modules
+      - package-lock.json
+
+deploy:
+  stage: deploy_stage
+  image: node
+  script:
+    # - echo $CI_JOB_NAME
+    - echo "Hey my name is $Name and people say This $Message"
+    - echo $GITLAB_USER_ID
+    # - apt update -y
+    # - apt install nodejs -y
+    - node app.js > /dev/null 2>&1 &
