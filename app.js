@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const simpleGit = require("simple-git");
 const ncp = require('ncp').ncp
 // const execa = require('execa')
 
@@ -24,6 +23,7 @@ app.post("/push", async (req, res) => {
     const gitlab_url = "https://github.com/tylersonn/reimagined-train.git";
 
     // fetch sf_app
+    // const sf_app = fs.createReadStream(path.join(__dirname, "sf_app"));
     const sf_app = path.join(__dirname, 'automatedcode');
 
     // Check if the directory exists
