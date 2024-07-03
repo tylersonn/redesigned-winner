@@ -2,11 +2,14 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const ncp = require('ncp').ncp
+const fileUpload = require('express-fileupload')
+// const unzipper = require('unzipper');
 // const execa = require('execa')
 
 const port = 8080;
 const app = express();
 app.use(express.json());
+app.use(fileUpload());
 
 app.get("/", (req, res) => {
   res.send("This is my node application for CICD application");
@@ -70,3 +73,14 @@ app.listen(port, () => {
   console.log(`App is running on http://localhost:${port}/`);
 });
 
+
+
+  // Copy files from the automatedcode folder to the temporary directory
+      // await new Promise((resolve, reject) => {
+      //   ncp(sf_app, tempDir, (err) => {
+      //     if (err) {
+      //       return reject(err);
+      //     }
+      //     resolve();
+      //   });
+      // });
